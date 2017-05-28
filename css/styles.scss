@@ -1,0 +1,350 @@
+@import "bourbon";
+@import "defaults";
+
+body {
+	margin: 0 auto;
+
+	max-width: 960px;
+
+	box-sizing: border-box;
+	padding: $abstand;
+}
+
+@media (max-width: ($breakpoint_desktop)){
+
+	body {
+		max-width: 640px;
+	}
+
+}
+
+pre, code {
+	font-family: $pre_fonts;
+}
+
+pre {
+	display: block;
+	padding: $abstand/2;
+
+	margin: 0 auto get-paragraph-margin(1em, 1.5);
+
+	white-space: pre-wrap;
+
+	background-color: #efefef;
+	border: 1px solid #ddd;
+
+	overflow-x: scroll;
+}
+
+code {
+	background-color: #efefef;
+	display: inline-block;
+	padding: 0 .2em;
+}
+
+pre code {
+	background-color: transparent;
+	display: inline;
+	padding: 0;
+}
+
+.prettyprinted {
+	font-size: $code_fontsize;
+}
+
+//*****************************/
+//*****//* !Typografie *//*****/
+//*****************************/
+
+html {
+	font-size: ($base_fontsize/16px) * 1em;
+	font-family: $body_fonts;
+	line-height: $base_lineheight;
+
+	color: $text;
+}
+
+//@media (max-width: ($breakpoint_desktop)){
+//
+//	html {
+//		font-size: (13px/16px) * 1em;
+//	}
+//
+//}
+
+@media (max-width: ($breakpoint_desktop)){
+
+	html {
+		font-size: get-font-size(22px);
+	}
+
+}
+
+
+p, ul, ol, dl, table, form, fieldset, blockquote, figure {
+	font-size: 1em;
+	@include paragraph-margin();
+}
+
+@for $i from 1 through 6 {
+
+	h#{$i} {
+		font-family: $headline_fonts;
+
+		@if ($i <= 4){
+			font-weight: normal;
+
+			a {
+				font-weight: normal;
+			}
+
+		}
+
+		font-size: nth($h_fontsizes, $i);
+		line-height: nth($h_lineheight, $i);
+
+		margin: 0 auto $base_margin;
+
+		a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+		}
+
+	}
+
+}
+
+@for $i from 1 through 4 {
+
+	h#{$i} {
+		margin-top: (2 * $base_margin);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+	}
+
+	@if ($i > 1){
+		h#{$i - 1} + h#{$i} {
+			margin-top: 0;
+		}
+	}
+
+}
+
+h1 + p {
+	margin-top: (-1/2 * $base_margin);
+}
+
+h2 {
+	margin-bottom: (3/2 * $base_margin);
+	border-bottom: 1px solid rgba($text, .75);
+}
+
+h5 {
+	margin-bottom: (1/2 * $base_margin);
+}
+
+@media (max-width: ($breakpoint_desktop)){
+
+	h3 {
+		font-size: 1.33em;
+		font-weight: bold;
+
+		margin-bottom: $base_margin;
+	}
+
+}
+
+hgroup {
+	margin-bottom: $base_margin;
+
+	& > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}
+
+caption {
+	font-size: 1em;
+}
+
+%link {
+	text-decoration: none;
+	color: $link;
+
+	font-weight: bold;
+
+	transition: .2s;
+
+	&:hover {
+		color: white;
+		background-color: $link_hover;
+		box-shadow: .2em 0 0 $link_hover, -.2em 0 0 $link_hover;
+
+		transition: .1s;
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	&:focus {
+	}
+
+	&:active {
+		background-color: $link_active;
+		box-shadow: .2em 0 0 $link_active, -.2em 0 0 $link_active;
+	}
+
+}
+
+a {
+	@extend %link;
+
+	&[href^=http]{
+
+		&:after {
+			content: " →";
+
+			position: relative;
+			left: 0;
+
+			transition: left .3s;
+		}
+
+		&:hover:after {
+			transition: left .1s;
+			left: .15em;
+		}
+
+	}
+
+}
+
+@mixin unstyle-link (){
+	font-weight: normal;
+	text-decoration: none;
+
+	background-color: transparent;
+	color: $schwarz;
+	box-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+	a {
+		&,
+		&:link,
+		&:visited,
+		&:hover,
+		&:focus,
+		&:active {
+			-webkit-font-smoothing: inherit;
+			-moz-osx-font-smoothing: auto;
+			@include unstyle-link();
+		}
+	}
+
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+
+	& > li {
+		padding-left: .8em;
+		position: relative;
+
+		&:before {
+			content: "•";
+
+			position: absolute;
+			left: 0; top:0;
+		}
+
+	}
+
+}
+
+li {
+
+	//ul, ol {
+	ul {
+		padding-left: .8em;
+	}
+
+	& > ul, & > ol {
+		margin-bottom: 0;
+	}
+
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+
+	&:before {
+		content: "— ";
+		//content: "↳ ";
+	}
+
+}
+
+address {
+	font-style: normal;
+
+	br {
+		content: " | ";
+
+		&:after {
+			content: " | ";
+		}
+	}
+
+}
+
+figure {
+
+	img {
+		box-sizing: border-box;
+		padding: 1em;
+
+		background-color: #efefef;
+		border: 1px solid #ddd;
+	}
+
+}
+
+figcaption {
+	font-style: italic;
+	color: #666;
+	//border-top: 1px solid #666;
+	//font-size: .85em;
+}
+
+small, .small {
+	font-size: $small_fontsize;
+	color: $grau;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.preface {
+	overflow-x: auto;
+
+	p {
+		font-size: get-font-size(20px);
+		margin-bottom: get-paragraph-margin(20px);
+	}
+
+}

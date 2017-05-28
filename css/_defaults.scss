@@ -1,0 +1,182 @@
+//*****************************/
+//*****//* !Konstanten *//*****/
+//*****************************/
+
+	// Farben
+
+$akzent: #009ee3;
+$kontrast: black;
+
+$akzent_dunkel: darken($akzent, 10%);
+
+$schwarz: black;
+$grau: #a3a8aa;
+$hellgrau: #f0f1f1;
+$hintergrund: #e3e5e5;
+
+	// Links
+
+$link: $akzent;
+$link_visited: $link;
+
+$link_hover: $link;
+$link_focus: $link_hover;
+
+$link_active: $grau;
+
+
+	// Typografie
+
+@function convert-to-em ($font_size){
+	@return round(100em * $font_size/$base_fontsize)/100;
+}
+
+$text: $schwarz;
+
+$body_fonts: "Droid Sans", Helvetica, Arial, sans-serif;
+$pre_fonts: "Droid Sans Mono", monospace;
+$headline_fonts: $body_fonts;
+
+$base_fontsize: 16px;
+$base_lineheight: 1.6;
+$base_margin: 1rem;
+
+$code_fontsize: .9em;
+$small_fontsize: .85em;
+
+$h_fontsizes: convert-to-em(52px), convert-to-em(38px), convert-to-em(26px), convert-to-em(20px), 1em, $small_fontsize;
+$h_lineheight:  1, 1.25, 1.3, 1.4, 1.4, 1.4;
+
+
+	// Formulare
+
+$form_disabled: #d1d3d4;
+$form_max_width: 366px;
+
+
+	// Grid
+
+$abstand: 2em;
+$rand: (2 * $abstand);
+$max_width: 1200px;
+
+$hohe_diagonale: 32px;
+
+
+	// Breakpoints
+
+$breakpoint_mobile: 360px;
+$breakpoint_desktop: 640px;
+
+
+	// Boxen
+
+$padding_box: (2/3 * $abstand);
+
+$schatten_box: 0 0 16px rgba(black, .2);
+
+$schatten_breite: 4px;
+
+
+	// Transitions
+
+$dauer_aktivieren: .1s;
+$dauer_deaktivieren: .3s;
+
+
+//****************************************/
+//*****//* !Funktionen und Mixins *//*****/
+//****************************************/
+
+@function strip-units($number) {
+	@return $number/(0 * $number + 1);
+}
+
+@function get-abstand($font_size: $base_fontsize, $vielfaches: 1){
+
+	@if (unit($font_size) == "px"){
+		@return $vielfaches * $abstand * $base_fontsize/$font_size;
+	}
+
+	@return $vielfaches * $abstand * 1/strip-units($font_size);
+}
+
+@mixin font-size ($font_size, $lineheight: 0){
+	font-size: get-font-size($font_size);
+
+	@if $lineheight != 0 {
+
+    	@if (unit($lineheight) == "px"){
+			line-height: ($lineheight/$font_size) * 1em;
+		} @else {
+			line-height: 1em * strip-units($lineheight);
+		}
+
+	}
+
+}
+
+@function get-font-size ($font_size, $base_fontsize_: $base_fontsize){
+
+	@if (unit($font_size) == "px"){
+		@return ($font_size/$base_fontsize_) * 1em;
+	}
+
+	@return $font_size;
+}
+
+@mixin line-height ($lineheight){
+	line-height: ($lineheight/$base_fontsize) * 1em;
+}
+
+@mixin paragraph-margin ($font_size: 1em, $vielfaches: 1){
+	margin: 0 auto get-paragraph-margin($font_size, $vielfaches);
+}
+
+@function get-paragraph-margin ($font_size: 1em, $vielfaches: 1){
+
+	@if (unit($font_size) == "px"){
+		@return round($vielfaches * 100em * $base_fontsize/$font_size)/100;
+	}
+
+	@if (unit($base_margin) == "rem"){
+		@return $base_margin;
+	}
+
+	@return round(100 * $vielfaches * $base_margin * 1em/$font_size)/100;
+
+}
+
+@mixin boxed($padding: $abstand){
+	padding: $padding;
+
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+@mixin box-sizing($methode: border-box){
+	@include prefixer(box-sizing, $methode, webkit moz spec);
+	*behavior: url(/css/ie/boxsizing.htc);
+}
+
+@mixin background-size($methode: cover){
+	@include prefixer(background-size, $methode, webkit moz o spec);
+	-ms-behavior: url(/css/ie/backgroundsize.min.htc);
+}
+
+@mixin clearfix(){
+	/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+}
