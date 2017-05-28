@@ -2,7 +2,7 @@ Better than User Agent Style
 ==============================
 Styles that are slightly better than the ones from the user agent stylesheet.
 
-[Take a look on the demo](./demo/)
+[Take a look on the demo](./blob/master/demo/index.md)
 
 How to
 ------
