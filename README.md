@@ -12,13 +12,18 @@ Just include the stylesheet served using gitram.com into your document.
 **Markdown:**
 
 ```md
-	CSS: //gitraw.com/supermueller/better-than-user-agent-style/master/css/styles.css
+	CSS: //cdn.rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css
+```
+For development only:
+
+```md
+	CSS: //rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css
 ```
 
 **HTML:**
 
 ```html
-	<link type="text/css" rel="stylesheet" href="//rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css">
+	<link type="text/css" rel="stylesheet" href="//cdn.rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css">
 ```
 
 ### Prettifying Code
