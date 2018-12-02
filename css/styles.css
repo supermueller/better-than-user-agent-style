@@ -31,6 +31,7 @@ pre code {
   display: inline;
   padding: 0; }
 
+pre, code,
 .prettyprinted {
   font-size: 0.9em; }
 
@@ -178,13 +179,11 @@ a {
   text-decoration: none;
   color: #009ee3;
   font-weight: bold;
-  -webkit-transition: .2s;
   transition: .2s; }
   a:hover {
     color: white;
     background-color: #009ee3;
     box-shadow: 0.2em 0 0 #009ee3, -0.2em 0 0 #009ee3;
-    -webkit-transition: .1s;
     transition: .1s;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
@@ -196,11 +195,9 @@ a[href^=http]:after {
   content: " →";
   position: relative;
   left: 0;
-  -webkit-transition: left .3s;
   transition: left .3s; }
 
 a[href^=http]:hover:after {
-  -webkit-transition: left .1s;
   transition: left .1s;
   left: .15em; }
 
@@ -266,4 +263,3 @@ small, .small {
   .preface p {
     font-size: 1.25em;
     margin-bottom: 0.8em; }
-/*# sourceMappingURL=styles.css.map */
