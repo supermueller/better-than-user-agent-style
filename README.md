@@ -33,7 +33,7 @@ If you want to prettifying your code you can use Google’s JavaScript code pret
 **Markdown:**
 
 ```md
-	HTML header: <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	HTML header: <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/google/code-prettify/loader/run_prettify.js"></script>
 
 	<!--?prettify?-->
 		
@@ -44,7 +44,7 @@ If you want to prettifying your code you can use Google’s JavaScript code pret
 **HTML**
 
 ```html
-	<script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/google/code-prettify/loader/run_prettify.js"></script>
 
 	[…]
 
