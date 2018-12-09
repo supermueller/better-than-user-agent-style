@@ -7,23 +7,24 @@ Styles that are slightly better than the ones from the user agent stylesheet.
 How to
 ------
 
-Just include the stylesheet served using gitram.com into your document.
+Just include the stylesheet served by jsdelivr.net into your document.
 
 **Markdown:**
 
 ```md
-	CSS: //cdn.rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css
+	CSS: //cdn.jsdelivr.net/gh/supermueller/better-than-user-agent-style/css/styles.css
 ```
+
 For development only:
 
 ```md
-	CSS: //rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css
+	CSS: //cdn.jsdelivr.net/gh/supermueller/better-than-user-agent-style@latest/css/styles.css
 ```
 
 **HTML:**
 
 ```html
-	<link type="text/css" rel="stylesheet" href="//cdn.rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css">
+	<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/gh/supermueller/better-than-user-agent-style/css/styles.css">
 ```
 
 ### Prettifying Code
