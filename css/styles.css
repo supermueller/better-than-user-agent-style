@@ -1,8 +1,11 @@
 @charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
 body {
   margin: 0 auto;
   max-width: 960px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 2em; }
 
 @media (max-width: 640px) {
@@ -36,7 +39,7 @@ pre code {
 
 html {
   font-size: 1em;
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Droid Sans", Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: black; }
 
@@ -49,7 +52,7 @@ p, ul, ol, dl, table, form, fieldset, blockquote, figure {
   margin: 0 auto 1rem; }
 
 h1 {
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Droid Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 3.25em;
   line-height: 1;
@@ -62,7 +65,7 @@ h1 {
       text-decoration: underline; }
 
 h2 {
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Droid Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 2.38em;
   line-height: 1.25;
@@ -75,7 +78,7 @@ h2 {
       text-decoration: underline; }
 
 h3 {
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Droid Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 1.63em;
   line-height: 1.3;
@@ -88,7 +91,7 @@ h3 {
       text-decoration: underline; }
 
 h4 {
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Droid Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.4;
@@ -101,7 +104,7 @@ h4 {
       text-decoration: underline; }
 
 h5 {
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Droid Sans", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.4;
   margin: 0 auto 1rem; }
@@ -111,7 +114,7 @@ h5 {
       text-decoration: underline; }
 
 h6 {
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Droid Sans", Helvetica, Arial, sans-serif;
   font-size: 0.85em;
   line-height: 1.4;
   margin: 0 auto 1rem; }
@@ -183,14 +186,16 @@ a {
   a:hover {
     color: white;
     background-color: #009ee3;
-    box-shadow: 0.2em 0 0 #009ee3, -0.2em 0 0 #009ee3;
+    -webkit-box-shadow: 0.2em 0 0 #009ee3, -0.2em 0 0 #009ee3;
+            box-shadow: 0.2em 0 0 #009ee3, -0.2em 0 0 #009ee3;
     -webkit-transition: .1s;
     transition: .1s;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   a:active {
     background-color: #a3a8aa;
-    box-shadow: 0.2em 0 0 #a3a8aa, -0.2em 0 0 #a3a8aa; }
+    -webkit-box-shadow: 0.2em 0 0 #a3a8aa, -0.2em 0 0 #a3a8aa;
+            box-shadow: 0.2em 0 0 #a3a8aa, -0.2em 0 0 #a3a8aa; }
 
 a[href^=http]:after {
   content: " →";
@@ -211,7 +216,8 @@ h1 a, h1 a:link, h1 a:visited, h1 a:hover, h1 a:focus, h1 a:active, h2 a, h2 a:l
   text-decoration: none;
   background-color: transparent;
   color: black;
-  box-shadow: none; }
+  -webkit-box-shadow: none;
+          box-shadow: none; }
 
 ul {
   list-style: none;
@@ -245,7 +251,8 @@ address {
       content: " | "; }
 
 figure img {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 1em;
   background-color: #efefef;
   border: 1px solid #ddd; }
