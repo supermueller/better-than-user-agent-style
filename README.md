@@ -7,18 +7,24 @@ Styles that are slightly better than the ones from the user agent stylesheet.
 How to
 ------
 
-Just include the stylesheet served using gitram.com into your document.
+Just include the stylesheet served by jsdelivr.net into your document.
 
 **Markdown:**
 
 ```md
-	CSS: //gitraw.com/supermueller/better-than-user-agent-style/master/css/styles.css
+	CSS: //cdn.jsdelivr.net/gh/supermueller/better-than-user-agent-style/css/styles.css
+```
+
+For development only:
+
+```md
+	CSS: //cdn.jsdelivr.net/gh/supermueller/better-than-user-agent-style@latest/css/styles.css
 ```
 
 **HTML:**
 
 ```html
-	<link type="text/css" rel="stylesheet" href="//rawgit.com/supermueller/better-than-user-agent-style/master/css/styles.css">
+	<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/gh/supermueller/better-than-user-agent-style/css/styles.css">
 ```
 
 ### Prettifying Code
@@ -28,7 +34,7 @@ If you want to prettifying your code you can use Google’s JavaScript code pret
 **Markdown:**
 
 ```md
-	HTML header: <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	HTML header: <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/google/code-prettify/loader/run_prettify.js"></script>
 
 	<!--?prettify?-->
 		
@@ -39,7 +45,7 @@ If you want to prettifying your code you can use Google’s JavaScript code pret
 **HTML**
 
 ```html
-	<script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/google/code-prettify/loader/run_prettify.js"></script>
 
 	[…]
 

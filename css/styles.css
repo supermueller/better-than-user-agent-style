@@ -34,6 +34,7 @@ pre code {
   display: inline;
   padding: 0; }
 
+pre, code,
 .prettyprinted {
   font-size: 0.9em; }
 
@@ -273,4 +274,3 @@ small, .small {
   .preface p {
     font-size: 1.25em;
     margin-bottom: 0.8em; }
-/*# sourceMappingURL=styles.css.map */
